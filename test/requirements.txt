@@ -1,0 +1,4 @@
+sqlalchemy[asyncio]
+aiosqlite
+pytest
+pytest-asyncio
