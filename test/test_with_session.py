@@ -6,12 +6,12 @@ from _db_mock.session_queries import (
     get_persons,
 )
 
-from sa_decor import set_global_session_maker
+from sa_decor import set_global_sessionmaker
 
 
 @pytest.fixture(scope="module", autouse=True)
 def set_up_async(session_maker):
-    set_global_session_maker(session_maker)
+    set_global_sessionmaker(session_maker)
 
 
 def test_no_session():

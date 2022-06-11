@@ -11,10 +11,10 @@ def set_global_engine(engine) -> None:
     _engine = engine
 
 
-def set_global_session_maker(session_maker) -> None:
+def set_global_sessionmaker(sessionmaker) -> None:
     """Set a global SQLAlchemy session maker to avoid passing it to each decorator
 
     :param engine: SQLAlchemy session maker to set
     """
     global _session_mkr
-    _session_mkr = session_maker
+    _session_mkr = sessionmaker

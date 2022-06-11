@@ -6,12 +6,12 @@ from _db_mock.async_session_queries import (
     get_persons,
 )
 
-from sa_decor import set_global_session_maker
+from sa_decor import set_global_sessionmaker
 
 
 @pytest.fixture(scope="module", autouse=True)
 def set_up_async(async_session_maker):
-    set_global_session_maker(async_session_maker)
+    set_global_sessionmaker(async_session_maker)
 
 
 @pytest.mark.asyncio
