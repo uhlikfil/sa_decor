@@ -2,6 +2,8 @@
 
 SQLAlchemy decorators for an optional connection/session dependency injection.
 
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 ## usage with SQLAlchemy Core
 You can set a global **engine** if you're using only one in your application.
 ```python
