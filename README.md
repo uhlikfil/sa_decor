@@ -39,7 +39,7 @@ foo(1, 2, connection=my_connection)
 ## usage with SQLAlchemy ORM sessions
 There is a similar functionality available for ORM sessions, but you need to provide a **sessionmaker** object instead of an **engine** and add a **session** parameter. You also need to choose whether the session should be committed when the function finishes or even when the function raises an exception.
 ```python
-sa_decor.set_global_sessionmaker(my_engine)
+sa_decor.set_global_sessionmaker(my_sessionmaker)
 
 
 @with_session(commit=False)
