@@ -1,18 +1,10 @@
+import os
+
 import setuptools
-from setuptools.command.egg_info import egg_info
 
 
-class egg_info_ex(egg_info):
-    """Includes license file into `.egg-info` folder."""
-
-    def run(self):
-        # don't duplicate license into `.egg-info` when building a distribution
-        if not self.distribution.have_run.get("install", True):
-            # `install` command is in progress, copy license
-            self.mkpath(self.egg_info)
-            self.copy_file("LICENSE.txt", self.egg_info)
-
-        egg_info.run(self)
+def get_version() -> str:
+    return os.getenv("GITHUB_REF_NAME")[1:]
 
 
 with open("README.md", "r", encoding="utf-8") as f:
@@ -20,7 +12,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setuptools.setup(
     name="sa_decor",
-    version="1.0.0",
+    version=get_version(),
     author="Filip Uhlík",
     author_email="filipfilauhlik@gmail.com",
     description="SQLAlchemy decorators for an optional connection/session dependency injection.",
