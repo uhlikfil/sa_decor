@@ -73,7 +73,7 @@ my_session.commit()
 ```
 
 ## notes
-This is the most useful when you have a bunch of functions that all rely on a connection/session but are sometimes called independently and sometimes from within a different function that also needs a connection.
+This is most useful when you have a bunch of functions that all rely on a connection/session but are sometimes called independently and other times from within a different function that also needs a connection.
 ```python
 @with_connection()
 def get_stuff(*, connection):
